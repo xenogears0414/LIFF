@@ -24,9 +24,11 @@
               }).catch(function(error) {
                 document.getElementById('log').value += 'sendMessagesText()=' + error + '\n';
               });
+              liff.closeWindow();
             }
           });
         })
+
         .catch((err) => {
           document.getElementById('log').value = 'init ng\n' + err;
         });
