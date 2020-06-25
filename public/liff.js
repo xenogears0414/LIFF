@@ -1,30 +1,13 @@
 window.onload = function (e) {
-    // init ‚Å‰Šú‰»BŠî–{î•ñ‚ğæ“¾B
+    // init ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½B
     // https://developers.line.me/ja/reference/liff/#initialize-liff-app
     liff.init(function (data) {
         getProfile();
         initializeApp(data);
     });
-
-    // ƒƒbƒZ[ƒW‚Ì‘—M
-    document.getElementById('sendMessageButton').addEventListener('click', function () {
-        // https://developers.line.me/ja/reference/liff/#liffsendmessages()
-        liff.sendMessages([{
-            type: 'text',
-            text: "TOYOTA"
-        }, {
-            type: 'sticker',
-            packageId: '2',
-            stickerId: '144'
-        }]).then(function () {
-            window.alert("‘—MŠ®—¹");
-        }).catch(function (error) {
-            window.alert("Error sending message: " + error);
-        });
-    });
 };
 
-// ƒvƒƒtƒ@ƒCƒ‹‚Ìæ“¾‚Æ•\¦
+// ï¿½vï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìæ“¾ï¿½Æ•\ï¿½ï¿½
 function getProfile(){
     // https://developers.line.me/ja/reference/liff/#liffgetprofile()
     liff.getProfile().then(function (profile) {
@@ -55,3 +38,19 @@ function initializeApp(data) {
     document.getElementById('roomidfield').textContent = data.context.roomId;
     document.getElementById('groupidfield').textContent = data.context.groupId;
 }
+
+document.getElementById('sendMessageButton').addEventListener('click', function () {
+    // https://developers.line.me/ja/reference/liff/#liffsendmessages()
+    liff.sendMessages([{
+        type: 'text',
+        text: "TOYOTA"
+    }, {
+        type: 'sticker',
+        packageId: '2',
+        stickerId: '144'
+    }]).then(function () {
+        window.alert("ãƒ€ãƒ¡");
+    }).catch(function (error) {
+        window.alert("Error sending message: " + error);
+    });
+});
