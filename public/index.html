@@ -19,6 +19,24 @@
         <option value="SAI">SAI</option>
       </select>
       <center><input id="sendMessageButton" type="submit" name="submit" value="決定"/></center>
+      <button  id = "sendmessagebutton" > メッセージ送信</button >
+      <script>
+      document.getElementById('sendmessageButton').addEventListener('click', function () {
+    	    // https://developers.line.me/ja/reference/liff/#liffsendmessages()
+    	    liff.sendMessages([{
+    	        type: 'text',
+    	        text: "TOYOTA"
+    	    }, {
+    	        type: 'sticker',
+    	        packageId: '2',
+    	        stickerId: '144'
+    	    }]).then(function () {
+    	        window.alert("ダメ");
+    	    }).catch(function (error) {
+    	        window.alert("Error sending message: " + error);
+    	    });
+    	});
+      </script>
     </form>
     <script src="liff.js"></script>
   </body>
