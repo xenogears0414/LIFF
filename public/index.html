@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>車名選択画面</title>
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+<link rel="stylesheet" href="style.css">
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
       liff
@@ -37,16 +38,15 @@
 </head>
 <body>
 	<div>
-		<h3>お車名</h3>
+		<h3 class="title">お車名</h3>
 		<select name="name" id="sendMessagesTextText" style="width: 100%">
-			<option value="who">--- どの車を選択しますか? ---</option>
+			<option value="">--- どの車を選択しますか? ---</option>
 			<option value="カローラ">カローラ</option>
 			<option value="スカイライン">スカイライン</option>
 			<option value="ヴィッツ">ヴィッツ</option>
 			<option value="BMW">BMW</option>
 			<option value="SAI">SAI</option>
 		</select> <input type="button" id="go" value="実行" />
-		<textarea id="log" style="width: 96%; height: 100px;"></textarea>
 	</div>
 </body>
 </html>
