@@ -39,18 +39,37 @@ function initializeApp(data) {
     document.getElementById('groupidfield').textContent = data.context.groupId;
 }
 
-document.getElementById('sendMessageButton').addEventListener('click', function () {
-    // https://developers.line.me/ja/reference/liff/#liffsendmessages()
-    liff.sendMessages([{
-        type: 'text',
-        text: "TOYOTA"
-    }, {
-        type: 'sticker',
-        packageId: '2',
-        stickerId: '144'
-    }]).then(function () {
-        window.alert("ダメ");
-    }).catch(function (error) {
-        window.alert("Error sending message: " + error);
-    });
-});
+
+$(document).ready(function()){
+	$("#sendMessageButton").bind("click",function()){
+	    liff.sendMessages([{
+	        type: 'text',
+	        text: "TOYOTA"
+	    }, {
+	        type: 'sticker',
+	        packageId: '2',
+	        stickerId: '144'
+	    }]).then(function () {
+	        window.alert("ダメ");
+	    }).catch(function (error) {
+	        window.alert("Error sending message: " + error);
+	    });
+	}
+
+}
+
+//document.getElementById('sendMessageButton').addEventListener('click', function () {
+//    // https://developers.line.me/ja/reference/liff/#liffsendmessages()
+//    liff.sendMessages([{
+//        type: 'text',
+//        text: "TOYOTA"
+//    }, {
+//        type: 'sticker',
+//        packageId: '2',
+//        stickerId: '144'
+//    }]).then(function () {
+//        window.alert("ダメ");
+//    }).catch(function (error) {
+//        window.alert("Error sending message: " + error);
+//    });
+//});
